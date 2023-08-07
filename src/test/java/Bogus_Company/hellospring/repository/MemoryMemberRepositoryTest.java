@@ -4,6 +4,7 @@ import Bogus_Company.hellospring.domain.Member;
 import Bogus_Company.hellospring.reposirory.MemberRepository;
 import Bogus_Company.hellospring.reposirory.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -14,8 +15,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MemoryMemberRepositoryTest {
 
-    MemberRepository repository = new MemoryMemberRepository();
-
+    MemoryMemberRepository repository = new MemoryMemberRepository();
+    @AfterEach
+    public void afterEach(){
+        repository.clearStore();
+    }
     @Test
     public void save() {
         Member member = new Member();
