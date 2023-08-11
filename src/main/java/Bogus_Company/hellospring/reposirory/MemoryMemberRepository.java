@@ -1,8 +1,10 @@
 package Bogus_Company.hellospring.reposirory;
 
 import Bogus_Company.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 
 public class MemoryMemberRepository implements MemberRepository{
 
